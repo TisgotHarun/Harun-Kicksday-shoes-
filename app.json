@@ -1,0 +1,16 @@
+const navToggle = document.getElementById('nav_check');
+
+// Hämtar navigationsmenyn
+const navMenu = document.querySelector('nav');
+
+// Lägger till en händelselyssnare för klickhändelse på knappen
+navToggle.addEventListener('click', function() {
+    // Om knappen är kryssad
+    if (navToggle.checked) {
+        // Visa navigationsmenyn
+        navMenu.style.display = 'block';
+    } else {
+        // Dölj navigationsmenyn
+        navMenu.style.display = 'none';
+    }
+});
