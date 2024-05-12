@@ -1,0 +1,81 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.image-container img { 
+    margin: 10px;
+}
+.logo {
+    display: block; /* Change display property to block to center horizontally */
+    margin: 0 auto; /* Set left and right margins to auto for horizontal centering */
+    text-align: center; /* Center align the text */
+}
+
+.bubbel-ruta {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    max-width: 400px; /* justera storleken efter behov */
+    margin: 20px auto; /* centrerar bubbelrutan */
+    position: relative;
+  }
+  
+  .bubbel-ruta::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: #f9f9f9 transparent;
+    display: block;
+    width: 0;
+  }
+  .logo {
+    color: black; /* Black color for the text */
+  }
+  
+  .red-text {
+    color: red; /* Red color for the fourth letter "k" */
+  }
+  
