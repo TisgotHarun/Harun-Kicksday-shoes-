@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        .product {
+            margin: 20px 0;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .buy-now-btn {
+            background-color: #28a745; /* Green */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buy-now-btn:hover {
+            background-color: #218838; /* Darker green */
+        }
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .form-container {
+            max-width: 300px;
+        }
+        .form-container input[type=text], .form-container input[type=email], .form-container input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .form-container .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .form-container .cancel {
+            background-color: red;
+        }
+        .form-container .btn:hover {
+            opacity: 1;
+        }
+        .thank-you-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Adidas Shoes</h1>
+        <nav>
+            <a href="#trending">Footbal shoes</a>
+            <a href="#running">Training shoes</a>
+            <a href="#walking">Stretching shoes</a>
+        </nav>
+    </header>
+    <main>
+        <section id="Footbal shoes">
+            <h2>Footbal shoes</h2>
+            <div class="product">
+                <!-- Placeholder image -->
+                <img src="adidas footbal shoes.jpg" alt="Footbal shoes">
+                <p class="price">2500kr</p>
+                <button class="buy-now-btn" onclick="openForm('Trending Shoes', 4500)">Buy Now</button>
+            </div>
+        </section>
+        <section id="Training shoes">
+            <h2>Training shoes</h2>
+            <div class="product">
+                <!-- Placeholder image -->
+                <img src="Adidas training shoes.jpg" alt="Training shoes">
+                <p class="price">1100kr</p>
+                <button class="buy-now-btn" onclick="openForm('Running Shoes', 250)">Buy Now</button>
+            </div>
+        </section>
+        <section id="Stretching shoes">
+            <h2>Stretching shoes</h2>
+            <div class="product">
+                <!-- Placeholder image -->
+                <img src="stretching shoes adidas.jpg" alt="Stretching shoes">
+                <p class="price">950kr</p>
+                <button class="buy-now-btn" onclick="openForm('Walking Shoes', 350)">Buy Now</button>
+            </div>
+        </section>
+    </main>
+    <div class="form-popup" id="buyForm">
+        <form class="form-container">
+            <h2>Buy Now</h2>
+            <label for="name"><b>Name</b></label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="address"><b>Address</b></label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+
+            <label for="quantity"><b>Quantity</b></label>
+            <input type="number" id="quantity" placeholder="Enter quantity" required>
+
+            <button type="button" class="btn" onclick="submitForm()">Buy</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="thank-you-popup" id="thankYouPopup">
+        <p>Thanks for buying our products!</p>
+    </div>
+    <footer>
+        &copy; 2024 Adidas. All rights reserved.
+    </footer>
+    <script>
+        function openForm(productName, price) {
+            document.getElementById("buyForm").style.display = "block";
+            // Du kan också använda denna information för att fylla i vissa fält eller lagra tillfälligt
+            console.log(`Buying ${productName} for ${price}kr`);
+        }
+
+        function closeForm() {
+            document.getElementById("buyForm").style.display = "none";
+        }
+
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const quantity = document.getElementById("quantity").value;
+            // Här kan du lägga till kod för att bearbeta och skicka in formuläret
+            if (name && email && address && quantity) {
+                document.getElementById("buyForm").style.display = "none";
+                document.getElementById("thankYouPopup").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("thankYouPopup").style.display = "none";
+                }, 3000);
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
