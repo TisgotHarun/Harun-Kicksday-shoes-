@@ -17,21 +17,7 @@ header {
     font-size: 24px;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
 
 .image-container {
     display: flex;
@@ -71,11 +57,138 @@ nav ul li a {
     display: block;
     width: 0;
   }
-  .logo {
-    color: black; /* Black color for the text */
+
+  .nav-btn {
+    color: #f9f9f9;
+    text-decoration: none;
   }
-  
-  .red-text {
-    color: red; /* Red color for the fourth letter "k" */
-  }
-  
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.product {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('nike_background.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo .black-text {
+    color: #000;
+}
+
+.logo .red-text {
+    color: #e20808;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+nav a.active, nav a:hover {
+    background-color: #e20808;
+    border-radius: 5px;
+}
+
+.bubbel-ruta {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 100px auto 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container img {
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav_toggle {
+    display: none;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* Tidigare CSS-regler här */
