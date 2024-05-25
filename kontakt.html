@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakta oss - kicksday</title>
+    <style>
+        /* Grundläggande CSS-stilar för formuläret */
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kontakta oss</h1>
+    
+    <!-- Kontaktformulär -->
+    <div class="contact-form">
+        <form id="contactForm" method="post" action="kontakt.php">
+            <label for="name">Namn:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">E-post:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Meddelande:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <input type="submit" value="Skicka">
+        </form>
+    </div>
+    
+    <!-- Tackmeddelande efter att formuläret skickats -->
+    <div id="thankYouMessage" class="message hidden">Tack för att du har skickat meddelandet! Besvaras inom kort.</div>
+    
+    <!-- Kontaktuppgifter för kicksday -->
+    <div class="contact-details">
+        <h2>Kontaktuppgifter för kicksday</h2>
+        <p>Telefon: 070-123 45 67</p>
+        <p>E-post: info@kicksday.com</p>
+        <p>Adress: Kicks Street 123, 123 45 Skostad</p>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Förhindrar att formuläret skickas på vanligt sätt
+
+            // Skicka formuläret med hjälp av AJAX
+            var formData = new FormData(this);
+
+            fetch(this.action, {
+                method: this.method,
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById("thankYouMessage").classList.remove("hidden");
+                    document.getElementById("contactForm").reset(); // Rensa formuläret
+                    alert("Tack för att du skickade!"); // Visa alertmeddelande
+                } else {
+                    throw new Error('Något gick fel.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
