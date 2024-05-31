@@ -192,3 +192,48 @@ footer {
     bottom: 0;
 }
 /* Tidigare CSS-regler här */
+/* Styling for navigation checkbox */
+#nav_check {
+    display: none; /* Döljer checkboxen från synligt läge */
+  }
+  
+  /* Anpassad design för checkbox */
+  #nav_check + label {
+    display: block;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #000;
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Visuell indikator för att visa checkboxens status */
+  #nav_check:checked + label::before {
+    content: "✔"; /* Visar ett kryss när checkboxen är markerad */
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    line-height: 30px;
+  }
+  /* Styling för betalnings- och adressfält */
+.payment-address-fields {
+    margin-top: 20px;
+}
+
+.payment-address-fields input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+.payment-address-fields input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.payment-address-fields input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
