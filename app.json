@@ -1,16 +1,19 @@
-const navToggle = document.getElementById('nav_check');
-
-// Hämtar navigationsmenyn
-const navMenu = document.querySelector('nav');
-
-// Lägger till en händelselyssnare för klickhändelse på knappen
-navToggle.addEventListener('click', function() {
-    // Om knappen är kryssad
-    if (navToggle.checked) {
-        // Visa navigationsmenyn
-        navMenu.style.display = 'block';
-    } else {
-        // Dölj navigationsmenyn
-        navMenu.style.display = 'none';
+{
+    "name": "kicksday",
+    "version": "1.0.0",
+    "description": "En webbsida för Kicks Day",
+    "main": "index.html",
+    "scripts": {
+      "start": "http-server -a localhost -p 8000"
+    },
+    "keywords": [
+      "kicksday",
+      "webbsida",
+      "frontend"
+    ],
+    "author": "Harun", 
+    "license": "ISC",
+    "dependencies": {
+      "http-server": "^0.12.3"
     }
-});
+  }
